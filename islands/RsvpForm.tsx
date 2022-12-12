@@ -41,93 +41,95 @@ export default function RsvpForm() {
   };
 
   return (
-    <Flex class='flex-col items-center justify-center border-2 p-4'>
-      <Title class='text-2xl'>RSVP</Title>
-      <form class='flex flex-col p-2 items-center' onSubmit={onSubmit}>
-        <Flex class='p-2'>
-          <Input
-            onInput={onInput}
-            class='p-2'
-            type='text'
-            name='firstName'
-            placeholder='First Name'
-            value={formState.firstName}
-            required
-          />
-        </Flex>
-        <Flex class='p-2'>
-          <Input
-            onInput={onInput}
-            class='p-2'
-            type='text'
-            name='lastName'
-            placeholder='Last Name'
-            value={formState.lastName}
-            required
-          />
-        </Flex>
-        <Flex class='p-2'>
-          <Input
-            onInput={onInput}
-            class='p-2'
-            type='text'
-            name='email'
-            placeholder='johnsmith@gmail.com'
-            value={formState.email}
-            required
-          />
-        </Flex>
-        <Flex class='p-2 w-full'>
-          <Radio
-            getActiveIndex={(i) => setActiveAttendingIndex(i)}
-            data={{
-              title: 'Attending?',
-              value: [
-                {
-                  label: 'Yes',
-                },
-                {
-                  label: 'No',
-                },
-              ],
-            }}
-          />
-        </Flex>
-        <Flex class='p-2 w-full'>
-          <Radio
-            getActiveIndex={(i) => setActivePlusIndex(i)}
-            data={{
-              title: 'Do you have a plus one?',
-              value: [
-                {
-                  label: 'No',
-                },
-                {
-                  label: 'Yes',
-                },
-              ],
-            }}
-          />
-        </Flex>
-        {activePlusIndex === 1 ? (
-          <Flex class='p-2 flex-col'>
-            <Text>What is their name?</Text>
+    <Flex class='flex-col items-center justify-center border-2 p-2'>
+      <Flex class='flex-col items-center justify-center border-2 p-4 w-full'>
+        <Title class='text-2xl'>RSVP</Title>
+        <form class='flex flex-col p-2 items-center w-full' onSubmit={onSubmit}>
+          <Flex class='p-2'>
             <Input
+              onInput={onInput}
               class='p-2'
               type='text'
-              name='plusOneName'
-              placeholder='John Smith'
-              onInput={onInput}
-              value={formState.plusOneName}
+              name='firstName'
+              placeholder='First Name'
+              value={formState.firstName}
+              required
             />
           </Flex>
-        ) : (
-          <></>
-        )}
-        <Button class='p-2' type='submit'>
-          Submit
-        </Button>
-      </form>
+          <Flex class='p-2'>
+            <Input
+              onInput={onInput}
+              class='p-2'
+              type='text'
+              name='lastName'
+              placeholder='Last Name'
+              value={formState.lastName}
+              required
+            />
+          </Flex>
+          <Flex class='p-2'>
+            <Input
+              onInput={onInput}
+              class='p-2'
+              type='text'
+              name='email'
+              placeholder='johnsmith@gmail.com'
+              value={formState.email}
+              required
+            />
+          </Flex>
+          <Flex class='p-2 w-full'>
+            <Radio
+              getActiveIndex={(i) => setActiveAttendingIndex(i)}
+              data={{
+                title: 'Attending?',
+                value: [
+                  {
+                    label: 'Yes',
+                  },
+                  {
+                    label: 'No',
+                  },
+                ],
+              }}
+            />
+          </Flex>
+          <Flex class='p-2 w-full'>
+            <Radio
+              getActiveIndex={(i) => setActivePlusIndex(i)}
+              data={{
+                title: 'Do you have a plus one?',
+                value: [
+                  {
+                    label: 'No',
+                  },
+                  {
+                    label: 'Yes',
+                  },
+                ],
+              }}
+            />
+          </Flex>
+          {activePlusIndex === 1 ? (
+            <Flex class='p-2 flex-col'>
+              <Text>What is their name?</Text>
+              <Input
+                class='p-2'
+                type='text'
+                name='plusOneName'
+                placeholder='John Smith'
+                onInput={onInput}
+                value={formState.plusOneName}
+              />
+            </Flex>
+          ) : (
+            <></>
+          )}
+          <Button class='p-2 w-full' type='submit'>
+            Submit
+          </Button>
+        </form>
+      </Flex>
     </Flex>
   );
 }
