@@ -41,8 +41,8 @@ export default function RsvpForm() {
   };
 
   return (
-    <Flex class='flex-col items-center justify-center border-2 p-2'>
-      <Flex class='flex-col items-center justify-center border-2 p-4 w-full'>
+    <Flex class='flex-col items-center justify-center border-1 p-2'>
+      <Flex class='flex-col items-center justify-center border-1 p-4 w-full'>
         <Title class='text-2xl'>RSVP</Title>
         <form class='flex flex-col p-2 items-center w-full' onSubmit={onSubmit}>
           <Flex class='p-2'>
