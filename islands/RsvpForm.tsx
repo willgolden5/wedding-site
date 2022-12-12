@@ -44,63 +44,73 @@ export default function RsvpForm() {
     <Flex class='flex-col items-center justify-center border-2 p-4'>
       <Title class='text-2xl'>RSVP</Title>
       <form class='flex flex-col p-2 items-center' onSubmit={onSubmit}>
-        <Input
-          onInput={onInput}
-          class='p-2'
-          type='text'
-          name='firstName'
-          placeholder='John'
-          value={formState.firstName}
-          required
-        />
-        <Input
-          onInput={onInput}
-          class='p-2'
-          type='text'
-          name='lastName'
-          placeholder='Doe'
-          value={formState.lastName}
-          required
-        />
-        <Input
-          onInput={onInput}
-          class='p-2'
-          type='text'
-          name='email'
-          placeholder='johndoe@gmail.com'
-          value={formState.email}
-          required
-        />
-        <Radio
-          getActiveIndex={(i) => setActiveAttendingIndex(i)}
-          data={{
-            title: 'Attending?',
-            value: [
-              {
-                label: 'Yes',
-              },
-              {
-                label: 'No',
-              },
-            ],
-          }}
-        />
-        <Radio
-          getActiveIndex={(i) => setActivePlusIndex(i)}
-          data={{
-            title: 'Do you have a plus one?',
-            value: [
-              {
-                label: 'Yes',
-              },
-              {
-                label: 'No',
-              },
-            ],
-          }}
-        />
+        <Flex class='p-2'>
+          <Input
+            onInput={onInput}
+            class='p-2'
+            type='text'
+            name='firstName'
+            placeholder='First Name'
+            value={formState.firstName}
+            required
+          />
+        </Flex>
+        <Flex class='p-2'>
+          <Input
+            onInput={onInput}
+            class='p-2'
+            type='text'
+            name='lastName'
+            placeholder='Last Name'
+            value={formState.lastName}
+            required
+          />
+        </Flex>
+        <Flex class='p-2'>
+          <Input
+            onInput={onInput}
+            class='p-2'
+            type='text'
+            name='email'
+            placeholder='johnsmith@gmail.com'
+            value={formState.email}
+            required
+          />
+        </Flex>
+        <Flex class='p-2 w-full'>
+          <Radio
+            getActiveIndex={(i) => setActiveAttendingIndex(i)}
+            data={{
+              title: 'Attending?',
+              value: [
+                {
+                  label: 'Yes',
+                },
+                {
+                  label: 'No',
+                },
+              ],
+            }}
+          />
+        </Flex>
+        <Flex class='p-2 w-full'>
+          <Radio
+            getActiveIndex={(i) => setActivePlusIndex(i)}
+            data={{
+              title: 'Do you have a plus one?',
+              value: [
+                {
+                  label: 'No',
+                },
+                {
+                  label: 'Yes',
+                },
+              ],
+            }}
+          />
+        </Flex>
         {activePlusIndex === 1 ? (
-          <>
+          <Flex class='p-2 flex-col'>
             <Text>What is their name?</Text>
             <Input
               class='p-2'
@@ -110,7 +120,7 @@ export default function RsvpForm() {
               onInput={onInput}
               value={formState.plusOneName}
             />
-          </>
+          </Flex>
         ) : (
           <></>
         )}

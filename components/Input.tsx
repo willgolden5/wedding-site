@@ -6,7 +6,7 @@ export function Input(props: JSX.HTMLAttributes<HTMLInputElement>) {
     <input
       {...props}
       disabled={!IS_BROWSER || props.disabled}
-      class={`${props.class} px-2 py-1 border(gray-500 2) hover:bg-gray-200`}
+      class={`${props.class} border(gray-500 2) hover:bg-gray-200`}
       onInput={props.onInput}
     />
   );
