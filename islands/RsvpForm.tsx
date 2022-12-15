@@ -1,5 +1,5 @@
 import { JSXInternal } from 'https://esm.sh/v99/preact@10.11.0/src/jsx.d.ts';
-import { useEffect, useState } from 'preact/hooks';
+import { useState } from 'preact/hooks';
 import { Button } from '../components/Button.tsx';
 import { Flex } from '../components/Flex.tsx';
 import { Input } from '../components/Input.tsx';
@@ -41,14 +41,19 @@ export default function RsvpForm() {
   };
 
   return (
-    <Flex class='flex-col items-center justify-center border-4 border-gray-900 p-2 bg-white'>
+    <Flex class='flex-col items-center justify-center border-4 border-gray-900 p-2 bg-white w-[350px]'>
       <Flex class='flex-col items-center justify-center border-4 border-gray-900 p-4 w-full '>
-        <Title class='text-[3em] font-semibold py-5'>RSVP</Title>
+        <Flex class='flex-row'>
+          <Title class='text-[3em] font-semibold py-5 animate-fade-out-down hover:animate-bounce'>R</Title>
+          <Title class='text-[3em] font-semibold py-5 animate-fade-out-down hover:animate-bounce'>S</Title>
+          <Title class='text-[3em] font-semibold py-5 animate-fade-out-down hover:animate-bounce'>V</Title>
+          <Title class='text-[3em] font-semibold py-5 animate-fade-out-down hover:animate-bounce'>P</Title>
+        </Flex>
         <form class='flex flex-col  items-center w-full' onSubmit={onSubmit}>
-          <Flex class='p-2'>
+          <Flex class='p-2 w-[100%]'>
             <Input
               onInput={onInput}
-              class='p-2'
+              class='p-2 w-[100%]'
               type='text'
               name='firstName'
               placeholder='First Name'
@@ -56,10 +61,10 @@ export default function RsvpForm() {
               required
             />
           </Flex>
-          <Flex class='p-2'>
+          <Flex class='p-2 w-[100%]'>
             <Input
               onInput={onInput}
-              class='p-2'
+              class='p-2 w-[100%]'
               type='text'
               name='lastName'
               placeholder='Last Name'
@@ -67,13 +72,13 @@ export default function RsvpForm() {
               required
             />
           </Flex>
-          <Flex class='p-2'>
+          <Flex class='p-2 w-[100%]'>
             <Input
               onInput={onInput}
-              class='p-2'
+              class='p-2 w-[100%]'
               type='text'
               name='email'
-              placeholder='johnsmith@gmail.com'
+              placeholder='your-email@gmail.com'
               value={formState.email}
               required
             />
@@ -111,10 +116,10 @@ export default function RsvpForm() {
             />
           </Flex>
           {activePlusIndex === 1 ? (
-            <Flex class='p-2 flex-col'>
-              <Text className='text-gray-500'>What is their name?</Text>
+            <Flex class='px-2 pb-6 flex-col w-[100%]'>
+              <Text className='text-gray-500 pb-1'>What is their name?</Text>
               <Input
-                class='p-2'
+                class='p-2 w-[100%]]'
                 type='text'
                 name='plusOneName'
                 placeholder='John Smith'

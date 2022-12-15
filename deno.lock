@@ -258,6 +258,7 @@
     "https://esm.sh/stable/preact@10.11.3/deno/hooks.js": "535e2fd07e4273ba7db7955102733412c10975a0c1f57e5e18966f612a022b69",
     "https://esm.sh/stable/preact@10.11.3/deno/preact.js": "d17d6b3217ccb0352f68bbd47930aa25d260c1a544f45bcbcf4cd1ded9d630bb",
     "https://esm.sh/twind@0.16.17": "18d47be2022b148a89572378cf12a6e9b2fed041a0b11129c64af1b4186af0a2",
+    "https://esm.sh/twind@0.16.17/": "18d47be2022b148a89572378cf12a6e9b2fed041a0b11129c64af1b4186af0a2",
     "https://esm.sh/twind@0.16.17/css": "c5f0a380e6c1413ed9cef09b2b30bf726ae493d42aceb653c9cdf3909ac1b592",
     "https://esm.sh/twind@0.16.17/sheets": "9da51c2715b8f78e3fc8cbc89183d10ca64e31d95f1fcacc333236c190454103",
     "https://esm.sh/v99/@emotion/is-prop-valid@0.8.8/X-YS9yZWFjdDpwcmVhY3QvY29tcGF0CmQvcHJlYWN0QDEwLjExLjA/deno/is-prop-valid.js": "863fea9152f6700c67f4f5c861535287d5c5123af34a8e1c0fd3d1a7a4ce32ca",
@@ -385,6 +386,7 @@
   },
   "npm": {
     "specifiers": {
+      "@twind/forms": "@twind/forms@0.1.4",
       "framer-motion": "framer-motion@7.7.2_react@18.2.0",
       "framer-motion@7.7.2": "framer-motion@7.7.2_react@18.2.0",
       "framer-motion@^7.6.19": "framer-motion@7.7.2_react@18.2.0"
@@ -445,6 +447,18 @@
           "tslib": "tslib@2.4.0"
         }
       },
+      "@twind/core@1.0.3": {
+        "integrity": "sha512-0YC4H04tcvYC1McELC3jHykXGxK1n5AC/pQhP/gaz4LcZkAEl3sP37/+/duBUBFJBPZ11Z8DD2hSAU/em+9aWA==",
+        "dependencies": { "csstype": "csstype@3.1.1" }
+      },
+      "@twind/forms@0.1.4": {
+        "integrity": "sha512-OwI3xd0NTDlQo2M9L3NDVnngBU/mGgHaIAif91taGfiN4zpbwvYLSpUFIeBlcD8XeGvdFQv07T5hxavFRsKa7Q==",
+        "dependencies": { "twind": "twind@1.0.3" }
+      },
+      "csstype@3.1.1": {
+        "integrity": "sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==",
+        "dependencies": {}
+      },
       "framer-motion@7.7.2_react@18.2.0": {
         "integrity": "sha512-SDq4pansh+UxMtHuApQmyXbbb/oQu3LwhPByiGKXLrKRHxmHiq7VML0/mnFQQRIpWiYR/+wM4q8foFzeoaz8eg==",
         "dependencies": {
@@ -487,6 +501,10 @@
       "tslib@2.4.0": {
         "integrity": "sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==",
         "dependencies": {}
+      },
+      "twind@1.0.3": {
+        "integrity": "sha512-lkQ+jPrAyMM9rIrgrvk5KvcLgNr+IR1LTCQz3KfcWqq6V9R2LL7bO9Tdgw2BOZkKxUE+1DOJC0n+9cNAOXUVSg==",
+        "dependencies": { "@twind/core": "@twind/core@1.0.3" }
       }
     }
   }

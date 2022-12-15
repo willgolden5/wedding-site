@@ -37,7 +37,7 @@ export function Radio({ data, getActiveIndex }: Options) {
               <Flex class='flex-row items-center w-full justify-between'>
                 <Text class='pr-2 text-gray-500'>{value.label}</Text>
                 <Input
-                  class='p-2'
+                  class='form-radio p-2 checked:bg-red-500'
                   type='radio'
                   checked={activeIndex === index}
                   onClick={() => {
