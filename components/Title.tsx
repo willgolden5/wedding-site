@@ -3,7 +3,11 @@ import { IS_BROWSER } from '$fresh/runtime.ts';
 
 export function Title(props: JSX.HTMLAttributes<HTMLHeadingElement>) {
   return (
-    <h1 {...props} disabled={!IS_BROWSER || props.disabled} class={`${props.class} text-gray-900`}>
+    <h1
+      {...props}
+      disabled={!IS_BROWSER || props.disabled}
+      class={`${props.class} text-2xl leading-[120%] text-gray-900`}
+    >
       {props.children}
     </h1>
   );

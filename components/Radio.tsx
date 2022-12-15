@@ -35,7 +35,7 @@ export function Radio({ data, getActiveIndex }: Options) {
           {data.value.map((value, index) => (
             <label>
               <Flex class='flex-row items-center w-full justify-between'>
-                <Text class='pr-2'>{value.label}</Text>
+                <Text class='pr-2 text-gray-500'>{value.label}</Text>
                 <Input
                   class='p-2'
                   type='radio'
@@ -52,25 +52,4 @@ export function Radio({ data, getActiveIndex }: Options) {
       </label>
     </div>
   );
-}
-
-{
-  /* <Text class='pr-2'>{data.title}</Text>
-      {data.value.map((value, index) => (
-        <div class='pl-2'>
-          <label>
-            <Input
-              class='p-2'
-              type='radio'
-              name='response'
-              checked={isChecked}
-              onClick={() => {
-                setIsChecked(!isChecked);
-                setActiveIndex(index);
-              }}
-            />
-            {value.label}
-          </label>
-        </div>
-      ))} */
 }

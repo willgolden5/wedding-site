@@ -41,10 +41,10 @@ export default function RsvpForm() {
   };
 
   return (
-    <Flex class='flex-col items-center justify-center border-1 p-2'>
-      <Flex class='flex-col items-center justify-center border-1 p-4 w-full'>
-        <Title class='text-2xl'>RSVP</Title>
-        <form class='flex flex-col p-2 items-center w-full' onSubmit={onSubmit}>
+    <Flex class='flex-col items-center justify-center border-4 border-gray-900 p-2 bg-white'>
+      <Flex class='flex-col items-center justify-center border-4 border-gray-900 p-4 w-full '>
+        <Title class='text-[3em] font-semibold py-5'>RSVP</Title>
+        <form class='flex flex-col  items-center w-full' onSubmit={onSubmit}>
           <Flex class='p-2'>
             <Input
               onInput={onInput}
@@ -112,7 +112,7 @@ export default function RsvpForm() {
           </Flex>
           {activePlusIndex === 1 ? (
             <Flex class='p-2 flex-col'>
-              <Text>What is their name?</Text>
+              <Text className='text-gray-500'>What is their name?</Text>
               <Input
                 class='p-2'
                 type='text'
