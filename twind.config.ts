@@ -36,6 +36,23 @@ export default {
         sans: "Jost, sans-serif",
       },
       keyframes: {
+        "move-chevron": {
+          "25%": {
+            opacity: "1",
+          },
+          "33.3%": {
+            opacity: "1",
+            transform: "translateY(30px)",
+          },
+          "66.6%": {
+            opacity: "1",
+            transform: "translateY(42px)",
+          },
+          "100%": {
+            opacity: "0",
+            transform: "translateY(64px) scale(0.5)",
+          },
+        },
         "fade-in-down": {
           "0%": {
             opacity: "0",
@@ -43,7 +60,7 @@ export default {
           },
           "100%": {
             opacity: "1",
-            transform: "translateY(0)",
+            transform: "translateY(0px)",
           },
         },
         "fade-out-down": {
@@ -63,7 +80,7 @@ export default {
           },
           "100%": {
             opacity: "1",
-            transform: "translateY(0)",
+            transform: "translateY(0px)",
           },
         },
         "fade-out-up": {
@@ -82,6 +99,8 @@ export default {
         "fade-out-down": "fade-out-down 0.5s ease-out",
         "fade-in-up": "fade-in-up 0.5s ease-out",
         "fade-out-up": "fade-out-up 0.5s ease-out",
+        "move-chevron-1st": "move-chevron 3s ease-out 1s infinite",
+        "move-chevron-nth": "move-chevron 3s ease-out 2s infinite",
       },
     },
   },

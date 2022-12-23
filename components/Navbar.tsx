@@ -14,7 +14,7 @@ export default function Header({ active }: Props) {
   ];
 
   return (
-    <div class='bg-white w-full py-6 px-8 flex flex-col md:flex-row gap-4'>
+    <div class='fixed bg-white w-full py-6 px-8 flex flex-col md:flex-row gap-4'>
       <div class='flex items-center flex-1 animate-fade-in-up'>
         <Flex class='flex-row ml-2'>
           <Title class='text-4xl font-semibold animate-fade-out-down hover:animate-bounce '>Will</Title>
