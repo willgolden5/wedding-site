@@ -4,7 +4,7 @@ import { Text } from '../components/Text.tsx';
 import { Title } from '../components/Title.tsx';
 
 const meetingText =
-  'Katherine and I met for the first time on a Tuesday at her apartment on Union Street in Park Slope. With my heart in my throat, I whisked her to redhook for our first date. I knew something special was happening but I had no clue what was in store...';
+  'Katherine and I met for the first time on a Tuesday at her apartment on Union Street in Park Slope. Confidently nervous, I whisked her to redhook for our first date. I knew something special was happening but I had no idea how...';
 const datingText =
   'Within months we were in love. Every moment together was precious. We moved into our first apartment less than a mile away from where we first met.';
 const engagementText =
@@ -19,13 +19,13 @@ const CardDisplay = () => {
         </Flex>
         <Flex class='flex-row items-center justify-evenly w-full'>
           <Flex class='flex-col w-[25%]'>
-            <Card title='Meeting' description={meetingText} image='https://i.imgur.com/Hml6ivr.jpeg' />
+            <Card title='Meeting' description={meetingText} image='https://i.imgur.com/aCbYgT0.jpg' />
           </Flex>
           <Flex class='flex-col w-[25%]'>
-            <Card title='Dating' description={datingText} image='../static/proposal.jpg' />
+            <Card title='Dating' description={datingText} image='https://i.imgur.com/ZuKzD4a.jpg' />
           </Flex>
           <Flex class='flex-col w-[25%]'>
-            <Card title='Engagement' description={engagementText} image='./static/proposal.jpg' />
+            <Card title='Engagement' description={engagementText} image='https://i.imgur.com/S0V80NU.jpg' />
           </Flex>
         </Flex>
       </Flex>
