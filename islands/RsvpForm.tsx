@@ -56,7 +56,7 @@ export default function RsvpForm({ data }: { data: Rsvp[] }) {
   };
 
   return (
-    <Flex class='flex-col items-center justify-center border-4 border-gray-900 p-2 bg-white w-[350px]'>
+    <Flex class='flex-col items-center justify-center border-4 border-gray-900 p-2 bg-white w-[375px]'>
       <Flex class='flex-col items-center justify-center border-4 border-gray-900 p-4 w-full '>
         <Flex class='flex-row'>
           <Title class='text-[3em] font-semibold py-5 animate-fade-out-down hover:animate-bounce'>R</Title>
@@ -100,33 +100,17 @@ export default function RsvpForm({ data }: { data: Rsvp[] }) {
           </Flex>
           <Flex class='p-2 w-full'>
             <Radio
-              getActiveIndex={(i) => setDietaryIdx(i)}
+              getActiveIndex={(i) => setActiveAttendingIndex(i)}
               data={{
-                title: 'Dietary Restrictions?',
-                value: [
-                  {
-                    label: 'Yes',
-                  },
-                  {
-                    label: 'No',
-                  },
-                ],
+                title: 'Attending?',
               }}
             />
           </Flex>
           <Flex class='p-2 w-full'>
             <Radio
-              getActiveIndex={(i) => setActiveAttendingIndex(i)}
+              getActiveIndex={(i) => setDietary(i)}
               data={{
-                title: 'Attending?',
-                value: [
-                  {
-                    label: 'Yes',
-                  },
-                  {
-                    label: 'No',
-                  },
-                ],
+                title: 'Dietary Restrictions?',
               }}
             />
           </Flex>
@@ -135,14 +119,6 @@ export default function RsvpForm({ data }: { data: Rsvp[] }) {
               getActiveIndex={(i) => setActivePlusIndex(i)}
               data={{
                 title: 'Do you have a plus one?',
-                value: [
-                  {
-                    label: 'No',
-                  },
-                  {
-                    label: 'Yes',
-                  },
-                ],
               }}
             />
           </Flex>
