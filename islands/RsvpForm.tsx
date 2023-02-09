@@ -83,6 +83,17 @@ export default function RsvpForm() {
               required
             />
           </Flex>
+          <Flex class='p-2 w-[100%]'>
+            <Input
+              onInput={onInput}
+              class='p-2 w-[100%]'
+              type='text'
+              name='dietaryRestrictions'
+              placeholder='Any dietary restrictions?'
+              value={formState.email}
+              required
+            />
+          </Flex>
           <Flex class='p-2 w-full'>
             <Radio
               getActiveIndex={(i) => setActiveAttendingIndex(i)}

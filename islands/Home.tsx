@@ -42,7 +42,7 @@ const Home = () => {
   ];
 
   return (
-    <div>
+    <div class='max-w-[100%] overflow-hidden'>
       <Navbar active='true' menu={menu} />
       <Flex class='flex flex-col h-screen w-screen'>
         <div ref={homeRef}></div>
