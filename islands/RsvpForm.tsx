@@ -1,3 +1,4 @@
+import { Remult } from 'remult';
 import { JSXInternal } from 'https://esm.sh/v99/preact@10.11.0/src/jsx.d.ts';
 import { useState } from 'preact/hooks';
 import { Button } from '../components/Button.tsx';
@@ -6,6 +7,7 @@ import { Input } from '../components/Input.tsx';
 import { Radio } from '../components/Radio.tsx';
 import { Text } from '../components/Text.tsx';
 import { Title } from '../components/Title.tsx';
+import { Rsvp } from '../model/rsvp.ts';
 
 interface FormProps {
   firstName: string;
@@ -16,22 +18,35 @@ interface FormProps {
   plusOneName?: string;
 }
 
-export default function RsvpForm() {
+const remult = new Remult();
+const rsvpRepo = remult.repo(Rsvp);
+
+export default function RsvpForm({ data }: { data: Rsvp[] }) {
   const [activeAttendingIndex, setActiveAttendingIndex] = useState(0);
+  const [dietary, setDietary] = useState('');
   const [activePlusIndex, setActivePlusIndex] = useState(0);
   const [formState, setFormState] = useState({
     firstName: '',
     lastName: '',
     email: '',
-    response: activeAttendingIndex === 0 ? 'Yes' : 'No',
+    response: activeAttendingIndex === 0 ? true : false,
     plusOne: activePlusIndex === 0 ? true : false,
     plusOneName: '',
+    dietaryRestrictions: dietary,
   });
 
   const onSubmit = (e: JSXInternal.TargetedEvent<HTMLFormElement, Event>) => {
     e.preventDefault();
-    const { firstName, lastName, email, response, plusOne, plusOneName } = formState;
-
+    const { firstName, lastName, email, response, plusOne, plusOneName, dietaryRestrictions } = formState;
+    rsvpRepo.save({
+      first: firstName,
+      last: lastName,
+      email,
+      attending: response,
+      plusOne: plusOne,
+      plusOneName: plusOneName,
+      dietaryRestrictions,
+    });
     console.log(formState);
   };
 
@@ -83,15 +98,20 @@ export default function RsvpForm() {
               required
             />
           </Flex>
-          <Flex class='p-2 w-[100%]'>
-            <Input
-              onInput={onInput}
-              class='p-2 w-[100%]'
-              type='text'
-              name='dietaryRestrictions'
-              placeholder='Any dietary restrictions?'
-              value={formState.email}
-              required
+          <Flex class='p-2 w-full'>
+            <Radio
+              getActiveIndex={(i) => setDietaryIdx(i)}
+              data={{
+                title: 'Dietary Restrictions?',
+                value: [
+                  {
+                    label: 'Yes',
+                  },
+                  {
+                    label: 'No',
+                  },
+                ],
+              }}
             />
           </Flex>
           <Flex class='p-2 w-full'>

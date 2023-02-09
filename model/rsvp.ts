@@ -11,6 +11,9 @@ export class Rsvp {
   last = "";
 
   @Fields.string()
+  email = "";
+
+  @Fields.string()
   dietaryRestrictions = "";
 
   @Fields.boolean()
