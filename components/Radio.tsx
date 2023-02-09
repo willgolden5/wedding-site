@@ -5,13 +5,8 @@ import { Input } from './Input.tsx';
 import { useEffect, useState } from 'preact/hooks';
 import { Flex } from './Flex.tsx';
 
-interface RadioOption {
-  label: string;
-}
-
 interface Option {
   title: string;
-  value: RadioOption[];
 }
 
 interface Options {
@@ -20,36 +15,25 @@ interface Options {
 }
 
 export function Radio({ data, getActiveIndex }: Options) {
-  const [isChecked, setIsChecked] = useState(true);
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  useEffect(() => {
-    getActiveIndex(activeIndex);
-  }, [activeIndex]);
+  const [checkboxEngaged, setCheckboxEngaged] = useState(false);
 
   return (
-    <div class='flex flex-row w-full items-center'>
-      <label class='flex flex-col w-full'>
-        <Text class=''>{data.title}</Text>
-        <Flex class='flex-row justify-between px-8'>
-          {data.value.map((value, index) => (
-            <label>
-              <Flex class='flex-row items-center w-full justify-between'>
-                <Text class='pr-2 text-gray-500'>{value.label}</Text>
-                <Input
-                  class='p-2 appearance-none rounded-[50%] text-green-600 border-gray-300 focus:ring-green-500 dark:focus:ring-gray-900 dark:ring-offset-gray-800 focus:ring-2 focus:bg-gray-200 dark:border-gray-600'
-                  type='radio'
-                  checked={activeIndex === index}
-                  onClick={() => {
-                    setIsChecked(!isChecked);
-                    setActiveIndex(index);
-                  }}
-                />
-              </Flex>
-            </label>
-          ))}
-        </Flex>
-      </label>
-    </div>
+    <Flex class='flex-col w-full py-2'>
+      <Text>{data.title}</Text>
+      <Flex class='flex-row w-full justify-between px-14'>
+        <Text>Yes</Text>
+        <Text>No</Text>
+      </Flex>
+      <div class='flex flex-row w-[100%] items-center h-8 p-2 border(gray-500 1)'>
+        <div
+          class={`flex h-[100%] w-[50%] ${checkboxEngaged ? 'bg-gray-900' : 'bg-none'}  p-2`}
+          onClick={() => setCheckboxEngaged(true)}
+        />
+        <div
+          class={`flex h-[100%] w-[50%] ${checkboxEngaged ? 'bg-none' : 'bg-gray-900'} p-2`}
+          onClick={() => setCheckboxEngaged(false)}
+        />
+      </div>
+    </Flex>
   );
 }

@@ -48,7 +48,7 @@ const Home = () => {
         <div ref={homeRef}></div>
         <Flex class='flex flex-col items-center h-full w-full justify-center animate-fade-in-up'>
           <RsvpForm />
-          <MouseIcon />
+          {/* <MouseIcon /> */}
         </Flex>
       </Flex>
       <Flex class='flex-col h-screen w-screen'>
