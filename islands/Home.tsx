@@ -4,7 +4,7 @@ import MouseIcon from '../components/MouseIcon.tsx';
 import Navbar from '../components/Navbar.tsx';
 import { Text } from '../components/Text.tsx';
 import About from '../islands/About.tsx';
-import RsvpForm from '../islands/RsvpForm.tsx';
+import RsvpReveal from '../islands/RsvpReveal.tsx';
 
 const Home = () => {
   const homeRef: MutableRef<null> = useRef(null);
@@ -47,7 +47,7 @@ const Home = () => {
       <Flex class='flex flex-col h-screen w-screen'>
         <div ref={homeRef}></div>
         <Flex class='flex flex-col items-center h-full w-full justify-center animate-fade-in-up'>
-          <RsvpForm />
+          <RsvpReveal />
           {/* <MouseIcon /> */}
         </Flex>
       </Flex>

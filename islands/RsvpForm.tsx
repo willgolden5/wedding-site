@@ -21,7 +21,11 @@ interface FormProps {
 const remult = new Remult();
 const rsvpRepo = remult.repo(Rsvp);
 
-export default function RsvpForm({ data }: { data: Rsvp[] }) {
+type RsvpFormProps = {
+  isFinished: (rsvpMode: boolean) => void;
+};
+
+export default function RsvpForm({ isFinished }: RsvpFormProps) {
   const [activeAttendingIndex, setActiveAttendingIndex] = useState(0);
   const [dietary, setDietary] = useState('');
   const [activePlusIndex, setActivePlusIndex] = useState(0);
@@ -36,18 +40,19 @@ export default function RsvpForm({ data }: { data: Rsvp[] }) {
   });
 
   const onSubmit = (e: JSXInternal.TargetedEvent<HTMLFormElement, Event>) => {
-    e.preventDefault();
-    const { firstName, lastName, email, response, plusOne, plusOneName, dietaryRestrictions } = formState;
-    rsvpRepo.save({
-      first: firstName,
-      last: lastName,
-      email,
-      attending: response,
-      plusOne: plusOne,
-      plusOneName: plusOneName,
-      dietaryRestrictions,
-    });
+    // e.preventDefault();
+    // const { firstName, lastName, email, response, plusOne, plusOneName, dietaryRestrictions } = formState;
+    // rsvpRepo.save({
+    //   first: firstName,
+    //   last: lastName,
+    //   email,
+    //   attending: response,
+    //   plusOne: plusOne,
+    //   plusOneName: plusOneName,
+    //   dietaryRestrictions,
+    // });
     console.log(formState);
+    isFinished(true);
   };
 
   const onInput = (e: JSXInternal.TargetedEvent<HTMLInputElement, Event>) => {
@@ -56,7 +61,7 @@ export default function RsvpForm({ data }: { data: Rsvp[] }) {
   };
 
   return (
-    <Flex class='flex-col items-center justify-center border-4 border-gray-900 p-2 bg-white w-[375px]'>
+    <Flex class='flex-col items-center justify-center border-4 border-gray-900 p-2 bg-white w-[365px]'>
       <Flex class='flex-col items-center justify-center border-4 border-gray-900 p-4 w-full '>
         <Flex class='flex-row'>
           <Title class='text-[3em] font-semibold py-5 animate-fade-out-down hover:animate-bounce'>R</Title>
@@ -98,14 +103,7 @@ export default function RsvpForm({ data }: { data: Rsvp[] }) {
               required
             />
           </Flex>
-          <Flex class='p-2 w-full'>
-            <Radio
-              getActiveIndex={(i) => setActiveAttendingIndex(i)}
-              data={{
-                title: 'Attending?',
-              }}
-            />
-          </Flex>
+
           <Flex class='p-2 w-full'>
             <Radio
               getActiveIndex={(i) => setDietary(i)}

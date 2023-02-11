@@ -16,9 +16,9 @@ export default function Header({ active, menu }: Props) {
     <div class='fixed bg-white w-full py-6 px-8 flex flex-col md:flex-row gap-4'>
       <div class='flex items-center flex-1 animate-fade-in-up'>
         <Flex class='flex-row ml-2'>
-          <Title class='text-4xl font-semibold animate-fade-out-down hover:animate-bounce '>Will</Title>
-          <Title class='text-4xl font-semibold animate-fade-out-down hover:animate-bounce px-1'>and</Title>
-          <Title class='text-4xl font-semibold animate-fade-out-down hover:animate-bounce'>Kate</Title>
+          <Title class='text-[2em] font-semibold animate-fade-out-down hover:animate-bounce '>W</Title>
+          <Title class='text-[2em] font-semibold animate-fade-out-down hover:animate-bounce px-1'>|</Title>
+          <Title class='text-[2em] font-semibold animate-fade-out-down hover:animate-bounce'>K</Title>
         </Flex>
       </div>
       <ul class='flex items-end gap-8 mr-6'>
