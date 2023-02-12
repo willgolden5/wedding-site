@@ -17,6 +17,10 @@ interface Options {
 export function Radio({ data, getActiveIndex }: Options) {
   const [checkboxEngaged, setCheckboxEngaged] = useState(false);
 
+  useEffect(() => {
+    getActiveIndex(checkboxEngaged ? 0 : 1);
+  }, [checkboxEngaged]);
+
   return (
     <Flex class='flex-col w-full py-2'>
       <Text>{data.title}</Text>
