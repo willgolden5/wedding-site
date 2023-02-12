@@ -1,5 +1,6 @@
 import { Remult } from 'remult';
 import { JSXInternal } from 'https://esm.sh/v99/preact@10.11.0/src/jsx.d.ts';
+import { HandlerContext, Handlers, PageProps } from '$fresh/server.ts';
 import { useState } from 'preact/hooks';
 import { Button } from '../components/Button.tsx';
 import { Flex } from '../components/Flex.tsx';
@@ -40,18 +41,16 @@ export default function RsvpForm({ isFinished }: RsvpFormProps) {
   });
 
   const onSubmit = (e: JSXInternal.TargetedEvent<HTMLFormElement, Event>) => {
-    // e.preventDefault();
-    // const { firstName, lastName, email, response, plusOne, plusOneName, dietaryRestrictions } = formState;
-    // rsvpRepo.save({
-    //   first: firstName,
-    //   last: lastName,
-    //   email,
-    //   attending: response,
-    //   plusOne: plusOne,
-    //   plusOneName: plusOneName,
-    //   dietaryRestrictions,
-    // });
-    console.log(formState);
+    const { firstName, lastName, email, response, plusOne, plusOneName, dietaryRestrictions } = formState;
+    rsvpRepo.save({
+      first: firstName,
+      last: lastName,
+      email,
+      attending: response,
+      plusOne: plusOne,
+      plusOneName: plusOneName,
+      dietaryRestrictions,
+    });
     isFinished(true);
   };
 
@@ -103,7 +102,6 @@ export default function RsvpForm({ isFinished }: RsvpFormProps) {
               required
             />
           </Flex>
-
           <Flex class='p-2 w-full'>
             <Radio
               getActiveIndex={(i) => setDietary(i)}
