@@ -18,7 +18,7 @@ export function Radio({ data, getActiveIndex }: Options) {
   const [checkboxEngaged, setCheckboxEngaged] = useState(false);
 
   useEffect(() => {
-    getActiveIndex(checkboxEngaged ? 0 : 1);
+    getActiveIndex(checkboxEngaged ? 1 : 0);
   }, [checkboxEngaged]);
 
   return (
