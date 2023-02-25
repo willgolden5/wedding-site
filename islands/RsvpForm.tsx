@@ -41,15 +41,15 @@ export default function RsvpForm({ isFinished }: RsvpFormProps) {
 
   const onSubmit = (e: JSXInternal.TargetedEvent<HTMLFormElement, Event>) => {
     const { firstName, lastName, email, response, plusOne, plusOneName, dietaryRestrictions } = formState;
-    rsvpRepo.save({
-      first: firstName,
-      last: lastName,
-      email,
-      attending: response,
-      plusOne: plusOne,
-      plusOneName: plusOneName,
-      dietaryRestrictions,
-    });
+    // rsvpRepo.save({
+    //   first: firstName,
+    //   last: lastName,
+    //   email,
+    //   attending: response,
+    //   plusOne: plusOne,
+    //   plusOneName: plusOneName,
+    //   dietaryRestrictions,
+    // });
     isFinished(true);
   };
 
