@@ -58,7 +58,7 @@ const Home = () => {
           </div>
         </Flex>
       </Flex>
-      <Flex class='flex flex-col h-screen w-screen'>
+      {/* <Flex class='flex flex-col h-screen w-screen'>
         <Flex class='flex flex-row items-center justify-center w-full h-full'>
           <div ref={registryRef}></div>
           <Text>REGISTRY HERE</Text>
@@ -77,7 +77,7 @@ const Home = () => {
             <Text>SCHEDULE HERE</Text>
           </div>
         </Flex>
-      </Flex>
+      </Flex> */}
     </div>
   );
 };

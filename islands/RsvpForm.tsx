@@ -117,7 +117,6 @@ export default function RsvpForm({ isFinished }: RsvpFormProps) {
                 class='p-2 w-[100%]]'
                 type='text'
                 name='dietaryRestrictions'
-                placeholder='...'
                 onInput={onInput}
                 value={formState.dietaryRestrictions}
               />
