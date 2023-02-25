@@ -1,7 +1,4 @@
-import { JSX } from 'preact';
-import { IS_BROWSER } from '$fresh/runtime.ts';
 import { Text } from './Text.tsx';
-import { Input } from './Input.tsx';
 import { useEffect, useState } from 'preact/hooks';
 import { Flex } from './Flex.tsx';
 
@@ -28,16 +25,22 @@ export function Radio({ data, getActiveIndex }: Options) {
         <Text>Yes</Text>
         <Text>No</Text>
       </Flex>
-      <div class='flex flex-row w-[100%] items-center h-8 p-2 border(gray-500 1)'>
+      <Flex class='flex flex-row w-[100%] items-center h-8 p-2 border(gray-500 1)'>
         <div
           class={`flex h-[100%] w-[50%] ${checkboxEngaged ? 'bg-gray-900' : 'bg-none'}  p-2`}
-          onClick={() => setCheckboxEngaged(true)}
+          onClick={(e) => {
+            e.preventDefault();
+            setCheckboxEngaged(true);
+          }}
         />
         <div
           class={`flex h-[100%] w-[50%] ${checkboxEngaged ? 'bg-none' : 'bg-gray-900'} p-2`}
-          onClick={() => setCheckboxEngaged(false)}
+          onClick={(e) => {
+            e.preventDefault();
+            setCheckboxEngaged(false);
+          }}
         />
-      </div>
+      </Flex>
     </Flex>
   );
 }

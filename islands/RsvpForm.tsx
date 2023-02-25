@@ -28,7 +28,7 @@ type RsvpFormProps = {
 
 export default function RsvpForm({ isFinished }: RsvpFormProps) {
   const [activeAttendingIndex, setActiveAttendingIndex] = useState(0);
-  const [dietary, setDietary] = useState('');
+  const [dietary, setDietary] = useState(0);
   const [activePlusIndex, setActivePlusIndex] = useState(0);
   const [formState, setFormState] = useState({
     firstName: '',
@@ -37,7 +37,7 @@ export default function RsvpForm({ isFinished }: RsvpFormProps) {
     response: activeAttendingIndex === 0 ? true : false,
     plusOne: activePlusIndex === 0 ? true : false,
     plusOneName: '',
-    dietaryRestrictions: dietary,
+    dietaryRestrictions: '',
   });
 
   const onSubmit = (e: JSXInternal.TargetedEvent<HTMLFormElement, Event>) => {
@@ -110,6 +110,21 @@ export default function RsvpForm({ isFinished }: RsvpFormProps) {
               }}
             />
           </Flex>
+          {dietary === 1 ? (
+            <Flex class='px-2 pb-6 flex-col w-[100%]'>
+              <Text className='text-gray-700 pb-1'>Please list them below:</Text>
+              <Input
+                class='p-2 w-[100%]]'
+                type='text'
+                name='dietaryRestrictions'
+                placeholder='...'
+                onInput={onInput}
+                value={formState.dietaryRestrictions}
+              />
+            </Flex>
+          ) : (
+            <></>
+          )}
           <Flex class='p-2 w-full'>
             <Radio
               getActiveIndex={(i) => setActivePlusIndex(i)}
@@ -120,7 +135,7 @@ export default function RsvpForm({ isFinished }: RsvpFormProps) {
           </Flex>
           {activePlusIndex === 1 ? (
             <Flex class='px-2 pb-6 flex-col w-[100%]'>
-              <Text className='text-gray-500 pb-1'>What is their name?</Text>
+              <Text className='text-gray-700 pb-1'>What is their name?</Text>
               <Input
                 class='p-2 w-[100%]]'
                 type='text'

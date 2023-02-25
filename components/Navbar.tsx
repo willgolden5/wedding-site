@@ -25,7 +25,7 @@ export default function Header({ active, menu }: Props) {
         {menu.map((menu) => (
           <li>
             <a class='group text-green-600 transition duration-300 ' onClick={() => menu.scroller()}>
-              <Text class='text-gray-500 text-2xl animate-fade-in-up'>{menu.name}</Text>
+              <Text class='text-gray-900 text-2xl animate-fade-in-up'>{menu.name}</Text>
               <span class='block max-w-0 group-hover:max-w-full transition-all duration-500 h-[3px] bg-green-300'></span>
             </a>
           </li>
