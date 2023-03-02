@@ -1,7 +1,7 @@
 import { useState } from 'preact/hooks';
 import RsvpForm from './RsvpForm.tsx';
-import { Rsvp } from '../model/rsvp.ts';
-import { Remult } from 'remult';
+// import { Rsvp } from '../model/rsvp.ts';
+// import { Remult } from 'remult';
 import { Flex } from '../components/Flex.tsx';
 import { Title } from '../components/Title.tsx';
 import { Button } from '../components/Button.tsx';
@@ -15,8 +15,8 @@ interface FormProps {
   plusOneName?: string;
 }
 
-const remult = new Remult();
-const rsvpRepo = remult.repo(Rsvp);
+// const remult = new Remult();
+// const rsvpRepo = remult.repo(Rsvp);
 
 const RevpReveal = () => {
   const [rsvpMode, setRsvpMode] = useState(false);

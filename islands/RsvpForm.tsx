@@ -7,7 +7,7 @@ import { Input } from '../components/Input.tsx';
 import { Radio } from '../components/Radio.tsx';
 import { Text } from '../components/Text.tsx';
 import { Title } from '../components/Title.tsx';
-import { Rsvp } from '../model/rsvp.ts';
+// import { Rsvp } from '../model/rsvp.ts';
 
 interface FormProps {
   firstName: string;
